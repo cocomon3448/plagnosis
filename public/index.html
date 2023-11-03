@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>플레그노시스 - Plagnosis</title>
+    <meta name="title" content="플레그노시스 - Plagnosis">
+    <meta name="subject" content="사진을 찍어 식물 종류를 알아보세요!">
+    <meta name="keywords" content="식물사랑, 식물 맞추기, 식물 스캔, AI 테스트">
+    <meta name="author" content="조민석">
+    <meta name="description" content="학교 동아리 식물 스캐너 임둥....">
+    <link rel="stylesheet" href="css/style.css">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="플레그노시스 - Plagnosis" />
+    <meta property="og:description" content="학교 동아리 식물 스캐너 임둥...."
+    />
+    <link rel="shortcut icon" href="asset/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="asset/images/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e64b3727e862b06"></script>
+</head>
+
+<body>
+    <div>
+        <ins class="kakao_ad_area" style="display:none;" 
+        data-ad-unit = "DAN-Ew7Kl3iSV0TA0sdX" 
+        data-ad-width = "320" 
+        data-ad-height = "100"></ins> 
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+    <section class="section">
+        <h1 class="title">식물 스캐너</h1>
+        <h2 class="subtitle">AI가 대신 찾아주는...(틀릴 수 있음 주의)</h2>
+    </section>
+    <div>
+        <ins class="kakao_ad_area" style="display:none;" 
+        data-ad-unit = "DAN-5CdlfSwxoH0Y0p1R" 
+        data-ad-width = "320" 
+        data-ad-height = "100"></ins> 
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+    <br/>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <div class="mt-3 container file-upload">
+        <div class="image-upload-wrap">
+            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+            <div class="drag-text">
+                <img src="asset/images/upload.svg" class="mt-5 pt-5 upload">
+                <h3 class="mb-5 pb-5 pt-4  upload-text">식물 사진을 올려놓거나 눌러서 업로드하세요!</h3>
+            </div>
+        </div>
+        
+        <div class="file-upload-content">
+            <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+            <div id="loading" class="animated bounce">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <p class="text-center">AI가 이 식물을 분석중입니다.</p>
+            </div>
+            <p class="result-message"></p>
+            <div id="label-container" class="d-flex flex-column justify-content-around"></div>
+            <div id="addThis" class="addthis_inline_share_toolbox_6lz1"></div>
+            <div class="pt-3 image-title-wrap">
+                <button type="button p-2" class="try-again-btn" onclick="gaReload2()">
+                    <span class="try-again-text">다른 사진으로 재시도</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <ins class="kakao_ad_area" style="display:none;" 
+        data-ad-unit = "DAN-6w4IxJfJgdoscCuc" 
+        data-ad-width = "320" 
+        data-ad-height = "100"></ins> 
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+    <div>
+        <ins class="kakao_ad_area" style="display:none;" 
+        data-ad-unit = "DAN-umoJ5x7CMAANETpl" 
+        data-ad-width = "320" 
+        data-ad-height = "100"></ins> 
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+    <div id="upload-wrap" style="display: none;"></div>>
+        <img id="faceImg" style="display: none;" src=""></img>
+    </div>
+    <footer class="footer pt-5 container d-flex justify-content-center">
+        <div>
+            <p>&copy; 조민석 2023. All Rights Reserved. (소스 일부 참고)</p>
+            <ul id="moreInfo" class="list-inline d-flex justify-content-center">
+                <li class="list-inline-item">
+                    <a href="">Privacy</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">About</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        function gaReload() {
+            window.location.reload();
+        }
+        function gaReload2() {
+            window.location.reload();
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.readAsDataURL(input.files[0]);
+                reader.onload = function (e) {
+                    var tempImage = new Image();
+                    tempImage.src = reader.result;
+                    tempImage.onload = function () {
+                        var canvas = document.createElement('canvas');
+                        var canvasContext = canvas.getContext("2d");
+                        var MAX_WIDTH = 400;
+                        var MAX_HEIGHT = 400;
+                        var width = tempImage.width;
+                        var height = tempImage.height;
+                        if (width > height) {
+                            if (width > MAX_WIDTH) {
+                                height *= MAX_WIDTH / width;
+                                width = MAX_WIDTH;
+                            }
+                        } else {
+                            if (height > MAX_HEIGHT) {
+                                width *= MAX_HEIGHT / height;
+                                height = MAX_HEIGHT;
+                            }
+                        }
+                        canvas.width = width;
+                        canvas.height = height;
+                        canvasContext.drawImage(this, 0, 0, width, height);
+                        var dataURI = canvas.toDataURL("image/jpeg");
+                        $('.image-upload-wrap').hide();
+                        $('#loading').show();
+                        $('.file-upload-image').attr('src', dataURI);
+                        $('.file-upload-content').show();
+                        $('.image-title').html(input.files[0].name);
+                        
+                        $('#loading').show();
+                        scan(input.files[0]);
+                    }
+                }
+            } else {
+                removeUpload();
+            }
+        }
+        function removeUpload() {
+            $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+            $('.file-upload-content').hide();
+            $('.image-upload-wrap').show();
+        }
+        $('.image-upload-wrap').bind('dragover', function() {
+            $('.image-upload-wrap').addClass('image-dropping');
+        });
+        $('.image-upload-wrap').bind('dragleave', function() {
+            $('.image-upload-wrap').removeClass('image-dropping');
+        });
+    </script>
+    <script type="text/javascript">
+    async function scan(para1) {
+        // const form = new FormData();
+        // form.append('organs', 'auto');
+        const myimg = para1;
+        // form.append('images', myimg); // Assuming 'face-image' is an input type="file"
+
+        const project = 'all'; // Set your project here
+
+        const apiUrl = 'https://my-api.plantnet.org/v2/identify/' + project + '?api-key=2b10NQdJJyocrSGzmVwi0BXdNu';
+
+        const formData = new FormData();
+            formData.append('organs', 'auto');
+            formData.append('images', myimg);
+
+            try {
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                body: formData,
+                mode: "cors",
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                display(data);
+                console.log(data); // This will contain the identification results
+            } else if(response.status === 404) {
+                console.error('Species Not Found');
+                var title = "<div class= 'one-title'> 이건 무슨 종이죠?... </div>"
+                $('.result-message').html(title);
+                $('#loading').hide();
+            } else if(response.status === 400) {
+                console.error('File type error maybe BAD REQ')
+                var title = "<div class= 'one-title'> 인터넷 상태 확인해주세용 or 파일은 jpg 나 png! </div>"
+                $('.result-message').html(title);
+                $('#loading').hide();
+            }
+            } catch (error) {
+            console.error('Error:', error);
+            }
+        }
+
+    //     let URL;
+    //     const urlTrait = "https://teachablemachine.withgoogle.com/models/qlgWSAE9c/";
+    //     // const urlParty = "https://teachablemachine.withgoogle.com/models/TESSMoTwO/";
+    //     const urlParty = "https://teachablemachine.withgoogle.com/models/eIDS62-YZ/";
+    //     let model, webcam, labelContainer, maxPredictions;
+    //     async function init() {
+    //         if (document.getElementById("type").checked) {
+    //             URL = urlTrait;
+    //         } else {
+    //             URL = urlParty;
+    //         }
+    //         const modelURL = URL + "model.json";
+    //         const metadataURL = URL + "metadata.json";
+    //         model = await tmImage.load(modelURL, metadataURL);
+    //         maxPredictions = model.getTotalClasses();
+    //         labelContainer = document.getElementById("label-container");
+    //         for (let i = 0; i < maxPredictions; i++) {
+    //             var element = document.createElement("div")
+    //             element.classList.add("d-flex");
+    //             labelContainer.appendChild(element);
+    //         }
+    //     }
+        async function display(data) {
+
+            const color = ['theminjoo', 'gukhim', 'jongeui','romantic', 'stable','free_spirited','intellectual','adventurous','loyal','spontaneous','emotional'];
+            let shuffled = color.sort((a, b) => 0.5 - Math.random());
+            labelContainer = document.getElementById("label-container");
+            let sum = 0;
+            for (let i = 0; i <= 9; i++) {
+                sum += data['results'][i]['score'];
+                var element = document.createElement("div");
+                element.classList.add("d-flex");
+                labelContainer.appendChild(element);
+            }
+            let best_name = data['bestMatch'];
+            let best_family = data['results'][0]['species']['family']['scientificNameWithoutAuthor'];
+            
+            let lst_common_names = data['results'][0]['species']['commonNames'];
+            
+            let common_names = "흔히 알려진 이름이 없습니당.."
+            if (lst_common_names.length != 0) {
+
+                common_names = lst_common_names[0];
+
+                for (let i = 1; i<lst_common_names.length; i++) {
+                    common_names = common_names + ", " + lst_common_names[i];
+                }
+            }
+
+            var resultTitle, resultExplain, resultCeleb;
+            resultTitle = best_name
+
+            resultExplain = "널리 알려진 이름(aka.): " + common_names;
+            resultCeleb = "종(Family):" + best_family;
+            var title = "<div class='" + shuffled[10] + "-animal-title'>" + resultTitle + "</div>"
+            var explain = "<div class='animal-explain pt-2'>" + resultExplain + "</div>"
+            var celeb = "<div class='" + shuffled[10] + "-animal-celeb pt-2 pb-2'>" + resultCeleb + "</div>"
+            $('.result-message').html(title + explain + celeb);
+            var barWidth;
+
+            for (let i = 0; i <= 9; i++) {
+
+                let p_name = data['results'][i]['species']['scientificNameWithoutAuthor'];
+
+                let p_common_names = data['results'][i]['species']['commonNames'];
+
+                if (((data['results'][i]['score'])/sum).toFixed(2) > 0.1) {
+                    barWidth = Math.round(((data['results'][i]['score'])/sum).toFixed(2) * 100) + "%";
+                } else if (((data['results'][i]['score'])/sum).toFixed(2) >= 0.01) {
+                    barWidth = "4%"
+                } else {
+                    barWidth = "2%"
+                }
+
+                var labelTitle;
+                var label;
+                label = "<div class='animal-label d-flex align-items-center' style='font-size: 0.85em'>" +  p_name + "</div>";
+                var bar = "<div class='bar-container position-relative container'><div class='" + shuffled[i] + "-box'></div><div class='d-flex justify-content-center align-items-center " + shuffled[i] + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(((data['results'][i]['score'])/sum).toFixed(2) * 100) + "%</span></div></div>"
+                labelContainer.childNodes[i].innerHTML = label + bar;
+            }
+            $('#loading').hide();
+        }
+    // </script>
+</body>
+<!-- 
+image input box
+Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+gender toggle
+Copyright (c) 2020 by Mert Cukuren (https://codepen.io/knyttneve/pen/bPpEZY)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ -->
+
+</html>
