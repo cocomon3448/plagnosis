@@ -109,9 +109,7 @@ Plagnosis was born out of my desire to simplify plant identification. As a membe
 ## Web Demo for Everyone
 
 This is the link for the web-demo.  
-
 I am currently on Free Option(so, one day limit is 500 request)  
-
 https://plantscan-9d081.web.app
 
 ## Contributing
@@ -245,8 +243,8 @@ Plagnosis는 식물 식별을 간소화하고자 하는 의지에서 탄생했�
 
 ## 모든 사용자를 위한 웹 데모
 
-이것은 웹 데모의 링크입니다.
-현재 무료 옵션을 사용하고 있으므로 (하루 제한 500개 요청) 너무 많이 요청하지 마십시오.
+이것은 웹 데모의 링크입니다.  
+현재 무료 옵션을 사용하고 있으므로 (하루 제한 500개 요청) 너무 많이 요청하지 마십시오.  
 https://plantscan-9d081.web.app
 
 ## 기여
