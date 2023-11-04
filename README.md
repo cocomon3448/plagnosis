@@ -116,7 +116,8 @@ https://plantscan-9d081.web.app
 
 ## Contributing
 
-I welcome contributions from the community to improve and expand Plagnosis.
+I welcome contributions from the community to improve and expand Plagnosis.  
+Got CSS design from Jocoding. Special Thanks.
 
 ## License
 
@@ -248,7 +249,8 @@ https://plantscan-9d081.web.app
 
 ## 기여
 
-Plagnosis를 개선하고 확장하기 위해 커뮤니티의 기여를 환영합니다.
+Plagnosis를 개선하고 확장하기 위해 커뮤니티의 기여를 환영합니다.  
+조코딩님 css 디자인 참고했습니다. 감사합니다.
 
 ## 라이선스
 
