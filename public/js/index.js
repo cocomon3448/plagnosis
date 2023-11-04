@@ -6,7 +6,9 @@ async function scan(para1) {
 
     const project = 'all'; // Set your project here
 
-    const apiUrl = 'https://my-api.plantnet.org/v2/identify/' + project + '?api-key=2b10NQdJJyocrSGzmVwi0BXdNu';
+    const apiKey = "YOUR_API_KEY_HERE"
+
+    const apiUrl = 'https://my-api.plantnet.org/v2/identify/' + project + '?api-key=' + apiKey;
 
     const formData = new FormData();
         formData.append('organs', 'auto');
