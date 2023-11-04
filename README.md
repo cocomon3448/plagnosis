@@ -125,8 +125,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgements
 
-I would like to express my gratitude to the Pl@ntNet team for their support and expertise in plant identification technology. Additionally, I want to thank the "Plants Lover Club" for inspiring this project and providing valuable feedback during its development. I hope Plagnosis helps plant enthusiasts and botanists alike in their quest to identify and learn more about the plant world. In addition, this web is in the demo state, meaning that not whole parts of the project are smooth and clear. (The result may turned out to be wrong.)
+I would like to express my gratitude to the Pl@ntNet team for their support and expertise in plant identification technology. Additionally, I want to thank the "Plants Lover Club" for inspiring this project and providing valuable feedback during its development. I hope Plagnosis helps plant enthusiasts and botanists alike in their quest to identify and learn more about the plant world. In addition, this web is in the demo state, meaning that not whole parts of the project are smooth and clear. (The result may turned out to be wrong.)  
 
+
+&copy; MinSeok Cho 2023. All Rights Reserved.
 
 ## 한국어
 
@@ -258,4 +260,7 @@ Plagnosis를 개선하고 확장하기 위해 커뮤니티의 기여를 환영�
 
 ## 감사의 글
 
-식물 식별 기술에서의 지원과 전문 지식을 제공해 주신 Pl@ntNet 팀에 깊은 감사를 표합니다. 또한 이 프로젝트를 영감을 주고 개발 과정에서 소중한 피드백을 제공해 준 "식물 사랑 동아리"에게도 감사드립니다. 이 웹 서비스는 아직 데모 상태이며 프로젝트 전체의 일부 부분이 원활하고 명확하지 않을 수 있음을 참고하시기 바랍니다. (결과가 잘못 나올 수 있습니다.)
+식물 식별 기술에서의 지원과 전문 지식을 제공해 주신 Pl@ntNet 팀에 깊은 감사를 표합니다. 또한 이 프로젝트를 영감을 주고 개발 과정에서 소중한 피드백을 제공해 준 "식물 사랑 동아리"에게도 감사드립니다. 이 웹 서비스는 아직 데모 상태이며 프로젝트 전체의 일부 부분이 원활하고 명확하지 않을 수 있음을 참고하시기 바랍니다. (결과가 잘못 나올 수 있습니다.)  
+
+
+&copy; 조민석 2023. All Rights Reserved.
