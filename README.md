@@ -2,6 +2,8 @@
 
 ![Plagnosis Logo](https://plantscan-9d081.web.app/asset/images/favicon.ico)
 
+https://plantscan-9d081.web.app
+
 Plagnosis is a web service that simplifies the process of identifying plants. Whether you are a gardening enthusiast, a botanist, or simply curious about the flora around you, Plagnosis can help you discover the scientific name, commonly used name, and family of a plant in just a few seconds.
 
 ## Table of Contents
